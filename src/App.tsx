@@ -6,25 +6,27 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
-
+import Home from "./components/Home";
+import MovieDetail from "./components/MovieDetail";
 
 // Components
-
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <div className="header">
-          <Header/>
+          <Header />
         </div>
-        <div className="container"> 
-        <Routes>
-          <Route path="*" element={<NotFound/>}></Route>
-        </Routes>
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/movie/:id" element={<MovieDetail />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
         <div className="footer">
-         <Footer/>
+          <Footer />
         </div>
       </BrowserRouter>
     </>
